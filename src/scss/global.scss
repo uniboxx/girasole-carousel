@@ -1,0 +1,323 @@
+$bp-largest: 87.5em; // 1400px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+
+	@media only screen and (max-width: $bp-largest) {
+		font-size: 50%;
+	}
+
+	@media only screen and (max-width: $bp-large) {
+		font-size: 40%;
+	}
+}
+
+body {
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: PapayaWhip;
+	background-image: linear-gradient(LightGoldenrodYellow, LemonChiffon, LightGoldenrodYellow);
+}
+
+.header {
+	display: flex;
+	background-color: burlywood;
+	height: 10rem;
+	align-items: center;
+	position: relative;
+}
+
+#logo {
+	max-height: 100%;
+	margin-right: 5rem;
+
+	@media only screen and (max-width: $bp-small) {
+		margin-right: 2rem;
+	}
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+	position: static;
+	box-shadow: none;
+	padding: 0;
+	background-color: burlywood;
+	list-style: none;
+
+	@media only screen and (max-width: $bp-medium) {
+		display: none;
+
+		padding: 3rem;
+		box-shadow: 0 1rem 2rem rgba(#000, 0.15);
+		position: absolute;
+		top: 10rem;
+		right: 0;
+		z-index: 1;
+	}
+
+	&__item {
+		width: max-content;
+		text-align: center;
+
+		&:not(:last-child) {
+			margin-right: 2rem;
+		}
+	}
+
+	&__link:link,
+	&__link:visited {
+		font-size: 2.3rem;
+		text-decoration: none;
+		text-transform: uppercase;
+		display: block;
+		padding: 1rem 2rem;
+		color: #000;
+		transition: all 0.2s;
+		border-radius: 5px;
+	}
+
+	&__link:hover {
+		transform: translateY(-3px) scale(1.05);
+		box-shadow: 0 1rem 2rem rgba(#000, 0.4);
+		background-color: darken(burlywood, 5%);
+	}
+
+	&__link:active {
+		transform: translateY(0) scale(1);
+		box-shadow: none;
+		background-color: burlywood;
+	}
+}
+
+// #menu-btn {
+// 	background-color: burlywood;
+// 	color: black;
+// 	padding: 1.6rem;
+// 	font-size: 1.6rem;
+// 	border: black;
+// 	cursor: pointer;
+// 	padding: 0 5rem;
+// 	display: none;
+// }
+
+// #spazio {
+// 	width: 100%;
+// 	margin-top: 0px;
+// 	z-index: 1;
+// }
+
+.accesso {
+	font-size: 2.2rem;
+	margin-left: auto;
+	margin-right: 2rem;
+
+	margin-right: 3rem;
+
+	@media only screen and (max-width: $bp-small) {
+		margin-right: 0;
+		text-align: center;
+	}
+
+	&__link:link,
+	&__link:visited {
+		color: #000;
+		text-decoration: none;
+		display: inline-block;
+		padding: 1rem 2rem;
+		transition: all 0.2s;
+		border-radius: 5px;
+		&:not(:last-child) {
+			margin-right: 3rem;
+			@media only screen and (max-width: $bp-small) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__link:hover {
+		transform: translateY(-3px) scale(1.05);
+		box-shadow: 0 1rem 2rem rgba(#000, 0.4);
+		background-color: darken(burlywood, 5%);
+	}
+
+	&__link:active {
+		transform: translateY(0) scale(1);
+		box-shadow: none;
+		background-color: burlywood;
+	}
+}
+
+#menu-btn {
+	cursor: pointer;
+}
+
+.menu {
+	width: 3rem;
+	height: 1px;
+	background-color: #333;
+	margin: 2rem 3rem 2rem 0;
+	display: none;
+
+	@media only screen and (max-width: $bp-medium) {
+		display: block;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		width: 3rem;
+		height: 1px;
+		background-color: #333;
+	}
+
+	&::before {
+		transform: translateY(-1rem);
+	}
+	&::after {
+		transform: translateY(0.8rem);
+	}
+}
+
+// #chisiamo {
+// 	position: absolute;
+// 	left: 1370px;
+// 	top: 30px;
+// 	z-index: 2;
+// }
+
+// #promozioni {
+// 	position: absolute;
+// 	left: 1260px;
+// 	top: 30px;
+// 	z-index: 2;
+// }
+
+// #logo_utente {
+// 	width: 230px;
+// 	height: 130px;
+// 	position: absolute;
+// 	left: 1560px;
+// 	top: -40px;
+// 	z-index: 2;
+// }
+
+.carousel {
+	width: 60svw;
+	height: 40svw;
+	// height: 54rem;
+	margin: 15rem auto;
+	position: relative;
+
+	& > button {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		align-self: center;
+		padding: 1rem 3rem;
+		margin: 0 2rem;
+		border-radius: 10px;
+		font-size: 4rem;
+		color: darken(burlywood, 20%);
+		border: none;
+		cursor: pointer;
+
+		transition: all 0.2s;
+
+		&#prev {
+			left: 0;
+			transform: translateY(-50%) translateX(-150%);
+		}
+		&#next {
+			right: 0;
+			transform: translateY(-50%) translateX(+150%);
+		}
+
+		@media only screen and (max-width: $bp-small) {
+			font-size: 3rem;
+			padding: 2rem;
+		}
+
+		&:hover {
+			box-shadow: 0 1rem 2rem rgba(#333, 0.4);
+			transform: translateY(-55%);
+		}
+
+		&:active {
+			box-shadow: none;
+			transform: translateY(0);
+		}
+	}
+
+	@media only screen and (max-width: $bp-medium) {
+		width: 75svw;
+		height: 50svw;
+	}
+}
+
+.banner {
+	display: block;
+	position: absolute;
+	width: 100%;
+	object-fit: contain;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 1s ease-in-out;
+}
+
+.banner.active {
+	opacity: 1;
+}
+/* Stile per il menu laterale */
+
+.sidemenu a {
+	padding: 16px;
+	text-decoration: none;
+	color: black;
+	display: block;
+	border-bottom: 2px solid black;
+}
+
+.sidemenu a:hover {
+	background-color: #f1f1f1;
+}
+
+.banner-nav {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	transform: translateY(-50%);
+	z-index: 5;
+}
+
+.banner-nav button {
+	background-color: burlywood;
+	border: none;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 10px;
+	opacity: 0.7;
+	z-index: 5;
+}
+
+.banner-nav button:hover {
+	opacity: 1;
+}

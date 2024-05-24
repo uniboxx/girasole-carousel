@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" href="scss/global.scss" />
+    <script defer type="module" src="ts/app.ts"></script>
+    <title>spaggio</title>
+  </head>
+  <body>
+    <header class="header">
+      <img
+        src="https://media.istockphoto.com/id/1483860812/it/foto/primo-piano-del-girasole-nel-campo-di-girasole-cielo-blu-sullo-sfondo-tema-fiori-primaverili.webp?b=1&s=170667a&w=0&k=20&c=REpMBl2XNagrVojRw-vrNuEmeLoM0aNvdP9RYxGMQdQ="
+        id="logo" />
+
+      <ul class="nav" id="nav">
+        <li class="nav__item">
+          <a class="nav__link" href="home.html">Home</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="chi siamo.html">Chi siamo</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="servizi.html">Servizi</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="contatti.html">Contatti</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="promozioni.html">promozioni</a>
+        </li>
+      </ul>
+
+      <div class="accesso">
+        <a class="accesso__link" href="login.html"
+          >Accesso
+          <!-- <img src="utente.png" id="logo_utente"
+        /> -->
+        </a>
+        <a class="accesso__link" href="registrazione.html"
+          >Registrazione
+          <!-- <img src="utente.png" id="logo_utente"
+        /> -->
+        </a>
+      </div>
+
+      <div id="menu-btn">
+        <div class="menu"></div>
+      </div>
+    </header>
+
+    <div class="carousel">
+      <button id="prev">❮</button>
+      <img
+        src="https://plus.unsplash.com/premium_photo-1661815009844-0533d0d98d45?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Z2lyYXNvbGV8ZW58MHx8MHx8fDA%3D"
+        class="banner banner--1 active" />
+      <img
+        src="https://images.unsplash.com/photo-1552160793-cbaf3ebcba72?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGdpcmFzb2xlfGVufDB8fDB8fHww"
+        class="banner banner--2" />
+      <img
+        src="https://images.unsplash.com/photo-1599270613570-a620f2e59f75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdpcmFzb2xlfGVufDB8fDB8fHww"
+        class="banner banner--3" />
+      <button id="next">❯</button>
+    </div>
+
+    <form action="home.php" method="POST"></form>
+  </body>
+</html>
