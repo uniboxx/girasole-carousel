@@ -42,7 +42,7 @@ function toggleMenu() {
 }
 
 menuBtn?.addEventListener('click', toggleMenu);
-backdrop.addEventListener('click', e => {
+backdrop.addEventListener('click', function (e: any) {
   if (!nav.contains(e.target)) {
     hideSideMenu();
   }
