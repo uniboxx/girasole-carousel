@@ -25,14 +25,12 @@ function prevBanner() {
 }
 
 function showSideMenu() {
-  nav.style.right = '0';
-  backdrop.style.backdropFilter = 'blur(5px)';
-  backdrop.style.pointerEvents = 'all';
+  nav.classList.add('showNav');
+  backdrop.className = 'showBackdrop';
 }
 function hideSideMenu() {
-  nav.style.right = '-100%';
-  backdrop.style.backdropFilter = 'blur(0)';
-  backdrop.style.pointerEvents = 'none';
+  nav.classList.remove('showNav');
+  backdrop.className = '';
 }
 
 function toggleMenu() {
