@@ -1,4 +1,5 @@
 const backdrop = document.getElementById('backdrop')!;
+const headerEl = document.querySelector('header')!;
 const menuBtn = document.getElementById('menu-btn');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
@@ -26,10 +27,12 @@ function prevBanner() {
 
 function showSideMenu() {
   nav.classList.add('showNav');
+  headerEl.classList.add('showNav');
   backdrop.className = 'showBackdrop';
 }
 function hideSideMenu() {
   nav.classList.remove('showNav');
+  headerEl.classList.remove('showNav');
   backdrop.className = '';
 }
 

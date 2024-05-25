@@ -56,6 +56,11 @@ body {
 	height: 10rem;
 	align-items: center;
 	position: relative;
+	overflow: hidden;
+
+	&.showNav {
+		overflow: visible;
+	}
 }
 
 #logo {
@@ -76,7 +81,6 @@ body {
 	background-color: burlywood;
 	list-style: none;
 	z-index: 10;
-	transition: all 0.5s;
 
 	@media only screen and (max-width: $bp-medium) {
 		flex-direction: column;
@@ -84,16 +88,17 @@ body {
 		box-shadow: 0 1rem 2rem rgba(#000, 0.15);
 		position: absolute;
 		top: 10rem;
+		right: 0;
+		transform: translateX(100%);
 		border-radius: 3px;
-		right: -100%;
+		transition: all 0.5s;
 
 		&.showNav {
-			right: 0;
+			transform: translateX(0);
 		}
 	}
 
 	&__item {
-		width: max-content;
 		text-align: center;
 
 		&:not(:last-child) {
@@ -107,6 +112,7 @@ body {
 
 	&__link:link,
 	&__link:visited {
+		display: none;
 		font-size: 2.3rem;
 		text-decoration: none;
 		text-transform: uppercase;
