@@ -1,10 +1,11 @@
 const menuBtn = document.getElementById('menu-btn');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
+const menu = document.querySelector('.nav') as HTMLButtonElement;
 
-var currentBanner = 0;
-var banners = document.querySelectorAll('.banner');
-var bannerInterval = setInterval(nextBanner, 10000);
+let currentBanner = 0;
+const banners = document.querySelectorAll('.banner');
+const bannerInterval = setInterval(nextBanner, 10000);
 
 function showBanner(index: number) {
   banners[currentBanner].classList.remove('active');
@@ -14,22 +15,15 @@ function showBanner(index: number) {
 
 function nextBanner() {
   showBanner(currentBanner + 1);
-  resetInterval();
+  clearInterval(bannerInterval);
 }
 
 function prevBanner() {
   showBanner(currentBanner - 1);
-  resetInterval();
-}
-
-function resetInterval() {
   clearInterval(bannerInterval);
-  bannerInterval = setInterval(nextBanner, 10000);
 }
 
 function toggleMenu() {
-  console.log('ciao');
-  const menu = document.querySelector('.nav')! as HTMLElement;
   menu.style.display = menu?.style.display === 'block' ? 'none' : 'block';
 }
 
